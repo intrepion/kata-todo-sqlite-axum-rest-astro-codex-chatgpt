@@ -1,0 +1,3 @@
+# Import as a confirmed full-state restore
+
+The server will validate and stage an immutable import preview before the user confirms it. The preview includes current and incoming counts by state and the incoming tasks; confirmation replaces the current task state with that exact snapshot. Apply requires the current list ETag, so changes made after preview force a refreshed preview and confirmation. Each pre-import state will remain available as a recovery point until the user deletes it; undo restores that exact state, including replacing edits made after import. Invalid or unsupported files leave the current state unchanged. This makes import a reversible restore operation rather than a merge that could duplicate tasks or combine incompatible ordering.
