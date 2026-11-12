@@ -13,7 +13,7 @@ jobs:
       run:
         working-directory: server
     steps:
-      - uses: actions/checkout@v4.4.0
+      - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
       - name: Install stable Rust
@@ -28,10 +28,10 @@ jobs:
       run:
         working-directory: web
     steps:
-      - uses: actions/checkout@v4.4.0
+      - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v4.4.0
+      - uses: actions/setup-node@v6.5.0
         with:
           node-version: '24'
       - run: npm ci
